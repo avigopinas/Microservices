@@ -11,7 +11,7 @@ import com.app.learnspringboot.pojo.Course;
 @RestController
 public class CourseController {
 
-	@GetMapping("/Cources")
+	@GetMapping("/cources")
 	public List<Course> retriveAllCourse(){
 		System.out.println("in cour controller");
 		return Arrays.asList(new Course(0, "Learn AWS", "Avinah"),
