@@ -17,6 +17,8 @@ import com.app.microservices.user.entity.User;
 import com.app.microservices.user.exception.UserNotFoundException;
 import com.app.microservices.user.service.UserDaoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -38,7 +40,7 @@ public class UserController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<User> addUser(@RequestBody User user) {
+	public ResponseEntity<User> addUser(@Valid @RequestBody User user) {
 		userDaoService.saveUser(user);
 		return ResponseEntity.created(null).build();
 	}
